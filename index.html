@@ -14,7 +14,7 @@
         #red-line {
             stroke: red;
         }
-        #army {
+        #Army {
             cursor: pointer;
         }
     </style>
@@ -30,7 +30,7 @@
                 const army = svgDoc.getElementById("Army");
                 const ocean = svgDoc.getElementById("Ocean");
                 const land = svgDoc.getElementById("Land");
-                
+
                 let isPlacing = false;
                 let line;
 
@@ -81,6 +81,8 @@
                             }
                         }
                     });
+                } else {
+                    console.error("Army element not found in the SVG.");
                 }
             });
         });

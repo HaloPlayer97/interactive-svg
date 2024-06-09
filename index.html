@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <object type="image/svg+xml" data="LandAndSea.svg" id="svg-object" style="width:100%; height:100vh;"></object>
+    <object type="image/svg+xml" data="LandAndSea2.svg" id="svg-object" style="width:100%; height:100vh;"></object>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -72,8 +72,8 @@
                             const target = event.target;
                             if (target !== ocean) {
                                 const newArmy = army.cloneNode(true);
-                                newArmy.style.left = `${event.clientX}px`;
-                                newArmy.style.top = `${event.clientY}px`;
+                                newArmy.setAttribute("x", event.clientX - rect.left - army.width.baseVal.value / 2);
+                                newArmy.setAttribute("y", event.clientY - rect.top - army.height.baseVal.value / 2);
                                 newArmy.removeAttribute("id");
                                 svgDoc.documentElement.appendChild(newArmy);
                                 isPlacing = false;

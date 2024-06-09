@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.7606392mm"
+   height="3.7606394mm"
+   viewBox="0 0 3.7606392 3.7606394"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-103.18007,-130.75689)">
+    <rect
+       style="fill:#e6e6e6;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+       id="Ocean"
+       width="86.63517"
+       height="86.63517"
+       x="63.939194"
+       y="90.295815"
+       ry="0.028648749" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+       id="Land"
+       width="38.314709"
+       height="34.654064"
+       x="88.831551"
+       y="114.70008"
+       ry="0.028648749" />
+    <rect
+       style="fill:#ffd42a;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+       id="Army"
+       width="3.6606407"
+       height="3.6606407"
+       x="103.23007"
+       y="130.8069"
+       ry="0.028648749" />
+  </g>
+</svg>

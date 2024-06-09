@@ -34,52 +34,54 @@
                 let isPlacing = false;
                 let line;
 
-                army.addEventListener("click", () => {
-                    isPlacing = true;
-                    line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                    line.classList.add("line");
-                    svgDoc.documentElement.appendChild(line);
-                });
+                if (army) {
+                    army.addEventListener("click", () => {
+                        isPlacing = true;
+                        line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.classList.add("line");
+                        svgDoc.documentElement.appendChild(line);
+                    });
 
-                svgDoc.addEventListener("mousemove", (event) => {
-                    if (isPlacing) {
-                        const rect = svgObject.getBoundingClientRect();
-                        const x = event.clientX - rect.left;
-                        const y = event.clientY - rect.top;
+                    svgDoc.addEventListener("mousemove", (event) => {
+                        if (isPlacing) {
+                            const rect = svgObject.getBoundingClientRect();
+                            const x = event.clientX - rect.left;
+                            const y = event.clientY - rect.top;
 
-                        const armyRect = army.getBoundingClientRect();
-                        const armyX = armyRect.left + armyRect.width / 2 - rect.left;
-                        const armyY = armyRect.top + armyRect.height / 2 - rect.top;
+                            const armyRect = army.getBoundingClientRect();
+                            const armyX = armyRect.left + armyRect.width / 2 - rect.left;
+                            const armyY = armyRect.top + armyRect.height / 2 - rect.top;
 
-                        line.setAttribute("x1", armyX);
-                        line.setAttribute("y1", armyY);
-                        line.setAttribute("x2", x);
-                        line.setAttribute("y2", y);
+                            line.setAttribute("x1", armyX);
+                            line.setAttribute("y1", armyY);
+                            line.setAttribute("x2", x);
+                            line.setAttribute("y2", y);
 
-                        const target = event.target;
-                        if (target === ocean) {
-                            line.setAttribute("id", "red-line");
-                        } else {
-                            line.setAttribute("id", "green-line");
+                            const target = event.target;
+                            if (target === ocean) {
+                                line.setAttribute("id", "red-line");
+                            } else {
+                                line.setAttribute("id", "green-line");
+                            }
                         }
-                    }
-                });
+                    });
 
-                svgDoc.addEventListener("contextmenu", (event) => {
-                    event.preventDefault();
-                    if (isPlacing) {
-                        const target = event.target;
-                        if (target !== ocean) {
-                            const newArmy = army.cloneNode(true);
-                            newArmy.style.left = `${event.clientX}px`;
-                            newArmy.style.top = `${event.clientY}px`;
-                            newArmy.removeAttribute("id");
-                            svgDoc.documentElement.appendChild(newArmy);
-                            isPlacing = false;
-                            line.remove();
+                    svgDoc.addEventListener("contextmenu", (event) => {
+                        event.preventDefault();
+                        if (isPlacing) {
+                            const target = event.target;
+                            if (target !== ocean) {
+                                const newArmy = army.cloneNode(true);
+                                newArmy.style.left = `${event.clientX}px`;
+                                newArmy.style.top = `${event.clientY}px`;
+                                newArmy.removeAttribute("id");
+                                svgDoc.documentElement.appendChild(newArmy);
+                                isPlacing = false;
+                                line.remove();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
         });
     </script>
